@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import './list-view';
 
-const URL_API = 'http://www.omdbapi.com/?apikey=',
+const URL_API = 'https://www.omdbapi.com/?apikey=',
 API_KEY = 'a5182dec';
 
 class GetResults extends LitElement {
