@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../../css/title-text-styles';
+import { styles } from '../css/title-text-styles';
 
 class TitleText extends LitElement {
     static get properties() {

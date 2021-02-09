@@ -26,6 +26,7 @@ export const styles = css`
         box-sizing: border-box;
         cursor: pointer;
         outline: none;
+        width: 70px;
     }
     input {
         height: 100%;
@@ -35,5 +36,8 @@ export const styles = css`
         outline: none;
         border: 1px solid rgb(204, 204, 204);
         border-radius: 3px 0px 0px 3px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        width: 180px;
     }
     `

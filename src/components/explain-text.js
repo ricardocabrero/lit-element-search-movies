@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../../css/explain-text-styles';
+import { styles } from '../css/explain-text-styles';
 
 class ExplainText extends LitElement {
 

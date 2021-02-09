@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../../css/card-item-styles';
+import { styles } from '../css/card-item-styles';
 
 class CardItem extends LitElement {
     static get properties() {

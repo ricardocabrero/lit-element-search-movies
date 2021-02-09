@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import './card-item';
-import { styles } from '../../css/list-view-styles';
+import { styles } from '../css/list-view-styles';
 
 class ListView extends LitElement {
     static get properties() {

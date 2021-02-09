@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../../css/search-form-styles';
+import { styles } from '../css/search-form-styles';
 
 class SearchForm extends LitElement {
     static get properties() {

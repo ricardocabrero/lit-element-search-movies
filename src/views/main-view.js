@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
-import './search-view';
-import './detail-view';
+import '../views/search-view';
+import '../views/detail-view';
 
 class MainView extends LitElement {
     static get properties() {

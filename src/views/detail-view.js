@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import './components/card-detail';
+import '../components/card-detail';
 
 const URL_API = 'https://www.omdbapi.com/?apikey=',
 API_KEY = 'a5182dec';
