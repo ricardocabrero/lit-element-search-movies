@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { favoriteView } from '../css/favorite-view-styles';
-import '../components/list-view';
+import '../components/list-items';
 import '../components/back-button';
 import '../components/clear-button';
 import '../components/center-text';
@@ -30,7 +30,7 @@ class FavoriteView extends LitElement {
 
     render(){
         const conditionalRender = this.results.length 
-        ? html`<list-view .results=${this.results}></list-view>`
+        ? html`<list-items .results=${this.results}></list-items>`
         : html`<center-text text='Favorites list is empty'></center-text>`;
 
         return html`

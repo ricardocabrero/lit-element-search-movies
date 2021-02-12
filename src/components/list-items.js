@@ -3,7 +3,7 @@ import './card-item';
 import './center-text';
 import { listView } from '../css/list-view-styles';
 
-class ListView extends LitElement {
+class ListItems extends LitElement {
     static get properties() {
         return {
             results: { type: Array },
@@ -26,4 +26,4 @@ class ListView extends LitElement {
     }
 }
 
-customElements.define('list-view', ListView)
+customElements.define('list-items', ListItems)

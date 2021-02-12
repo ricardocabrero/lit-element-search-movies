@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import './list-view';
+import './list-items';
 import '../components/center-text';
 import '../components/loading-icon';
 
@@ -42,7 +42,7 @@ class GetResults extends LitElement {
     render() {
         const conditionalRender = this.loading 
         ? html`<loading-icono><loading-icon>` 
-        : html` <list-view .results=${this.results}></list-view>`;
+        : html` <list-items .results=${this.results}></list-items>`;
         return html`
         <div class="get-results">
            ${conditionalRender}
