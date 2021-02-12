@@ -1,25 +1,25 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../css/title-text-styles';
+import { titleText } from '../css/title-text-styles';
 
 class TitleText extends LitElement {
     static get properties() {
         return {
-            title: { type: String }
+            text: { type: String }
         }
     }
 
     static get styles() {
-        return [styles]
+        return [titleText]
     }
 
     constructor() {
         super();
-        this.title = 'Search Movies';
+        this.text = 'Search Movies';
     }
 
     render() {
         return html`
-        <h1>${this.title}</h1>`
+        <h1>${this.text}</h1>`
     }
 }
 

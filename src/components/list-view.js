@@ -1,29 +1,28 @@
 import { LitElement, html } from 'lit-element';
 import './card-item';
-import { styles } from '../css/list-view-styles';
+import './center-text';
+import { listView } from '../css/list-view-styles';
 
 class ListView extends LitElement {
     static get properties() {
         return {
             results: { type: Array },
-            movie: { type: Object }
+            movie: { type: Object },
+            text: { type: String }
         }
     }
 
     static get styles() {
-        return [styles]
+        return [listView]
     }
 
     render() {
-
         const conditionalRender = !this.results 
-        ? html`<p>No results found</p>` 
-        : html`${this.results.map(movie => html`<card-item .movie=${movie}></card-item>`)}`;
+        ? html`<center-text text='No results found'></center-text>` 
+        : html`<ul>${this.results.map(movie => html`<card-item .movie=${movie}></card-item>`)}</ul>`;
 
         return html`
-        <ul>
-        ${conditionalRender}
-        </ul>`
+        ${conditionalRender}`
     }
 }
 

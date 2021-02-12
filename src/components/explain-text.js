@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../css/explain-text-styles';
+import { explainText } from '../css/explain-text-styles';
 
 class ExplainText extends LitElement {
 
@@ -10,12 +10,12 @@ class ExplainText extends LitElement {
     }
 
     static get styles() {
-        return [styles]
+        return [explainText]
     }
 
     constructor() {
         super();
-        this.text = 'Please search using the form (full title or keyword)'
+        this.text = 'Please search using the form (full title or keyword).'
     }
 
     render() {

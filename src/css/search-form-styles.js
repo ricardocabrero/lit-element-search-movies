@@ -1,7 +1,7 @@
 
 import { css } from 'lit-element';
 
-export const styles = css`
+export const searchForm = css`
     :host {
         display: flex;
         justify-content: center;

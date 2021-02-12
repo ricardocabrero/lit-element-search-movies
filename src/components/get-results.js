@@ -1,5 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import './list-view';
+import '../components/center-text';
+import '../components/loading-icon';
 
 const URL_API = 'https://www.omdbapi.com/?apikey=',
 API_KEY = 'a5182dec';
@@ -15,27 +17,35 @@ class GetResults extends LitElement {
     constructor() {
         super();
         this.results = [];
+        this.loading = true;
     }
 
     async fetchCall(data) {
-        const results = await fetch(`${URL_API}${API_KEY}&s=${data}`) 
+        const results = await fetch(`${URL_API}${API_KEY}&s=${data}`);
         const movies = await results.json();
-        return movies;
+        this.results = movies['Search'];
+        this.loading = false;
     } 
 
-    updated() {
-        super.updated();
-        if(!this.data) {
-            return;
+    connectedCallback() {
+        super.connectedCallback();
+        this.fetchCall(this.data);
+    }
+
+    update(props) {
+        super.update(props);
+        if(!props.get('results')) {
+            this.fetchCall(this.data)
         }
-        this.fetchCall(this.data)
-            .then(res => this.results = res['Search']);
-    } 
-
+    }
+    
     render() {
+        const conditionalRender = this.loading 
+        ? html`<loading-icono><loading-icon>` 
+        : html` <list-view .results=${this.results}></list-view>`;
         return html`
         <div class="get-results">
-            <list-view .results=${this.results}></list-view>
+           ${conditionalRender}
         </div>`
     }
 }

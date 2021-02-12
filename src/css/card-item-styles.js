@@ -1,6 +1,6 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+export const cardItem = css`
     :host {
         width: 18%;
         margin: 0 1% 30px;
@@ -24,8 +24,7 @@ export const styles = css`
             margin-bottom: 20px;
         }
     }
-
-     li {
+    li {
         border-radius: 8px;
         box-shadow: rgb(187 186 186) 0px 0px 8px;
         height: 100%;
@@ -40,6 +39,8 @@ export const styles = css`
     a {
         text-decoration:none;
         color: inherit;
+        display: block;
+        height: 100%;
     }
     img {
         display: block;
@@ -49,6 +50,7 @@ export const styles = css`
     }
     p {
         padding: 0 18px;
+        word-break: break-word;
     }
     p:first-child {
         margin: 15px 0px;

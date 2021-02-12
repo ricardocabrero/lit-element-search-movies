@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from '../css/card-item-styles';
+import { cardItem } from '../css/card-item-styles';
 
 class CardItem extends LitElement {
     static get properties() {
@@ -10,12 +10,7 @@ class CardItem extends LitElement {
     }
 
     static get styles() {
-        return [styles]
-    }
-
-    constructor() {
-        super();
-        this.switchView = false;
+        return [cardItem]
     }
 
     handleDetail(e) {
@@ -24,17 +19,18 @@ class CardItem extends LitElement {
         this.dispatchEvent(new CustomEvent('view-detail', {
             bubbles: true,
             composed: true,
-            detail: { viewDetail: this.switchView, id: e.currentTarget.id }
+            detail: { id: e.currentTarget.id }
         }));
     }
 
     render() {
         const { Title, Poster, Year, imdbID:id } = this.movie;
+        const conditionalPoster = Poster === 'N/A' ? '../../src/img/no-img-found.jpg' : Poster;
         return html`
         <li>
             <a @click=${this.handleDetail}
             id=${id} href="/" title="${Title} - click for detail">
-                <img src=${Poster} alt=${Title}>
+                <img src=${conditionalPoster} alt=${Title}>
                 <div class="text">
                     <p>${Title}</p>
                     <p>${Year}</p>

@@ -1,11 +1,12 @@
 import { LitElement, html } from 'lit-element';
 import '../views/search-view';
 import '../views/detail-view';
+import '../views/favorite-view';
 
 class MainView extends LitElement {
     static get properties() {
         return {
-            switchView: { type: Boolean },
+            switchView: { type: String },
             data: { type: String },
             detail: { type: String }
         }
@@ -13,7 +14,7 @@ class MainView extends LitElement {
 
     constructor() {
         super();
-        this.switchView = true;
+        this.switchView = 'search-view';
         this.data = '';
         this.detail = '';
     }
@@ -22,6 +23,8 @@ class MainView extends LitElement {
         super.connectedCallback();
         this.addEventListener('form-data', this.handleFormData);
         this.addEventListener('view-detail', this.handleDetail);
+        this.addEventListener('back-btn', this.handleBack);
+        this.addEventListener('view-favorite', this.handleFavorite);
     }
 
     handleFormData({detail}) {
@@ -29,15 +32,36 @@ class MainView extends LitElement {
     }
 
     handleDetail({detail}) {
-        const { viewDetail, id } = detail;
-        this.switchView = viewDetail;
+        const { id } = detail;
         this.detail = id;
+        this.switchView = 'detail-view';
+    }
+
+    handleBack() {
+        this.switchView = 'search-view'
+    }
+
+    handleFavorite() {
+        this.switchView = 'favorite-view';
+    }
+
+    handleViews() {
+        switch(this.switchView) {
+            case 'search-view':
+                return html`<search-view data=${this.data}></search-view>`;
+            case 'detail-view': 
+                return html`<detail-view detail=${this.detail}></detail-view>`;
+            case 'favorite-view':
+                return html`<favorite-view></favorite-view>`;
+            default:
+                return html`<search-view data=${this.data}></search-view>`;
+        }
     }
 
     render() {
         return html`
         <div class="main-view">
-        ${this.switchView ? html`<search-view data=${this.data}></search-view>` : html`<detail-view detail=${this.detail}></detail-view>`}
+        ${this.handleViews()}
         </div>`
     }
 }

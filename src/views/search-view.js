@@ -18,12 +18,14 @@ class SearchView extends LitElement {
     }
 
     render() {
+        const conditionalRender = this.data && html`<get-results data=${this.data}></get-results>`;
+        
         return html`
         <div class="search-view">
             <title-text></title-text>
             <search-form></search-form>
             <explain-text></explain-text>
-            <get-results data=${this.data}></get-results>
+            ${conditionalRender}
         </div>`
     }
 }

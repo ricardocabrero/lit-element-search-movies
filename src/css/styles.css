@@ -4,3 +4,15 @@ body {
     background: rgb(171 171 171 / 0%);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+    font-family: 'star';
+    src: url('../fonts/star.eot');
+    src: url('../fonts/star.eot') format('embedded-opentype'),
+        url('../fonts/star.woff2') format('woff2'),
+        url('../fonts/star.woff') format('woff'),
+        url('../fonts/star.ttf') format('truetype'),
+        url('../fonts/star.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

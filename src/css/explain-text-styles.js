@@ -1,6 +1,6 @@
 import { css } from 'lit-element';
 
-export const styles = css`
+export const explainText = css`
     p {
         text-align: center;
         color: #5a5959;
