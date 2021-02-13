@@ -48,7 +48,7 @@ class MainView extends LitElement {
     handleViews() {
         switch(this.switchView) {
             case 'search-view':
-                return html`<search-view .data=${this.data}></search-view>`;
+                return html`<search-view data=${this.data}></search-view>`;
             case 'detail-view': 
                 return html`<detail-view detail=${this.detail}></detail-view>`;
             case 'favorite-view':

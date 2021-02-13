@@ -19,7 +19,7 @@ class SearchView extends LitElement {
     }
 
     render() {
-        const conditionalRender = this.data && html`<get-results .data=${this.data}></get-results>`;
+        const conditionalRender = this.data && html`<get-results data=${this.data}></get-results>`;
         const favoriteBtn = localStorage.getItem('favorites') && html`<favorite-button><favorite-button>`;
         return html`
         <div class="search-view">

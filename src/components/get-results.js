@@ -27,22 +27,16 @@ class GetResults extends LitElement {
         this.loading = false;
     } 
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.fetchCall(this.data);
-    }
-
-    update(props) {
-        super.update(props);
-        if(!props.get('results')) {
+    updated(props) {
+       if(!props.get('results')) {
             this.fetchCall(this.data)
-        }
+       }
     }
     
     render() {
         const conditionalRender = this.loading 
         ? html`<loading-icono><loading-icon>` 
-        : html` <list-items .results=${this.results}></list-items>`;
+        : html`<list-items .results=${this.results}></list-items>`;
         return html`
         <div class="get-results">
            ${conditionalRender}
