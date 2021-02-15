@@ -22,7 +22,7 @@ export const toggleStar = css`
         border-left: 70px solid transparent;
         color: #fff;
         font-size: 22px;
-        curson: pointer;
+        -webkit-tap-highlight-color: transparent;
     }
 
     span.selected{
