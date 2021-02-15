@@ -27,10 +27,11 @@ class GetResults extends LitElement {
         this.loading = false;
     } 
 
-    updated(props) {
-       if(!props.get('results')) {
-            this.fetchCall(this.data)
-       }
+    update(props) {
+        super.update(props);
+        if(!props.get('results')) {
+            this.fetchCall(this.data);
+        }
     }
     
     render() {
